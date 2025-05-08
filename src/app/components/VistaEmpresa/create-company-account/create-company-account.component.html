@@ -1,0 +1,116 @@
+<app-navbar></app-navbar>
+
+<main>
+  <!-- Sección de la imagen -->
+  <div class="imagen-de-fondo"></div>
+
+  <!-- Sección Azul con Título y Formulario -->
+  <section class="seccion-azul">
+    <h2 class="titulo">Registro de Empresa</h2>
+    <p class="subtitulo">Únete a nuestra comunidad inclusiva</p>
+
+    <div class="registro-container">
+      <form [formGroup]="registerCompanyForm" (ngSubmit)="onSubmit()">
+        <div class="formulario">
+          <!-- Sección de Nombre de Empresa Columna Izquierda -->
+          <div class="columna">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Nombre de la Empresa</mat-label>
+              <input matInput type="text" formControlName="nombre" placeholder="Nombre de la empresa">
+              <mat-hint>Introduce el nombre legal o comercial</mat-hint>
+
+              @if (registerCompanyForm.get('nombre')?.hasError('required')) {
+              <mat-error>El nombre de la empresa es <strong>obligatorio</strong>.</mat-error>
+              }
+            </mat-form-field>
+
+            <!-- Sección de Correo Electronico -->
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Email-(Correo Electronico)</mat-label>
+              <input matInput type="email" formControlName="correo" placeholder="Ej. empresa@email.com">
+              <mat-hint>"Usa tu correo empresarial"</mat-hint>
+
+              @if (registerCompanyForm.get('correo')?.hasError('email') && !registerCompanyForm.get('correo')?.hasError('required')) {
+              <mat-error>Por favor ingresa un correo válido.</mat-error>
+              }
+              @if (registerCompanyForm.get('correo')?.hasError('required')) {
+              <mat-error>El correo es <strong>obligatorio</strong>.</mat-error>
+              }
+            </mat-form-field>
+
+            <!-- FIN Sección de Correo Electronico -->
+
+            <!-- Sección de Contraseña -->
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" formControlName="password" placeholder="Ingresa una contraseña">
+              <mat-hint>Debe tener al menos 8 caracteres</mat-hint>
+
+              @if (registerCompanyForm.get('password')?.hasError('required')) {
+              <mat-error>La contraseña es <strong>obligatoria</strong>.</mat-error>
+              }
+            </mat-form-field>
+
+            <!-- Fin de Sección de Contraseña -->
+            <!-- Sección de Confirmar Contraseña -->
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Confirmar Contraseña</mat-label>
+              <input matInput type="password" formControlName="confirmarPassword" placeholder="Vuelve a escribir tu contraseña">
+              <mat-hint>Debe ser igual a la contraseña anterior</mat-hint>
+
+              @if (registerCompanyForm.get('confirmarPassword')?.hasError('required')) {
+              <mat-error>Debes confirmar tu contraseña.</mat-error>
+              }
+            </mat-form-field>
+
+          </div>
+          <!-- Fin de Sección de Confirmar Contraseña -->
+          <!-- Sección de Telefono Columna Derecha -->
+          <div class="columna">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Teléfono</mat-label>
+              <input matInput type="tel" formControlName="telefono" placeholder="Número de contacto">
+              <mat-hint>Incluye el código de área si es necesario</mat-hint>
+
+              @if (registerCompanyForm.get('telefono')?.hasError('required')) {
+              <mat-error>El número de teléfono es <strong>obligatorio</strong>.</mat-error>
+              }
+            </mat-form-field>
+
+            <!-- Fin de Sección de Telefono -->
+            <!-- Sección de Descripcion -->
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Descripción</mat-label>
+              <textarea matInput formControlName="descripcion" placeholder="Descripción de la empresa"></textarea>
+              <mat-hint>Describe brevemente a qué se dedica tu empresa</mat-hint>
+
+              @if (registerCompanyForm.get('descripcion')?.hasError('required')) {
+              <mat-error>La descripción es <strong>obligatoria</strong>.</mat-error>
+              }
+            </mat-form-field>
+
+            <!-- Fin de Sección de Descripcion -->
+            <!-- Sección de Iniciar Sesion -->
+            <div class="iniciar-sesion">
+              <p>¿Ya tienes una cuenta?</p>
+              <button type="button" class="btn-iniciar" routerLink="/registercompany">Iniciar Sesión</button>
+            </div>
+            <!-- Fin de Sección de Iniciar Sesion -->
+          </div>
+        </div>
+
+        <button type="submit" class="btn-empresa" [disabled]="registerCompanyForm.invalid">Registrar como Empresa</button>
+
+        <div class="registro-social">
+          <p>O si prefieres puedes registrarte con:</p>
+          <div class="botones-sociales">
+            <button type="button" class="btn-google">Google</button>
+            <button type="button" class="btn-facebook">Facebook</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>
