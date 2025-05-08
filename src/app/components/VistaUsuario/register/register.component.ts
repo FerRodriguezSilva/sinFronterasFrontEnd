@@ -33,7 +33,7 @@ export class RegisterComponent {
         passwordHash: this.registerForm.value.password
       };
 
-      axios.post('http://localhost:8080/api/usuarios/create', usuario)
+      axios.post('hsinfronteras-c9fcd9g3hah9hnd8.canadacentral-01.azurewebsites.net/api/usuarios/create', usuario)
         .then(response => {
           console.log('Usuario registrado con éxito:', response.data);
 

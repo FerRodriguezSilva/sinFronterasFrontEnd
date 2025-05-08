@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ForoService {
 
-  private apiUrl = 'http://localhost:8080/api/foro'; // Ajusta la URL si tu backend usa otra
+  private apiUrl = 'sinfronteras-c9fcd9g3hah9hnd8.canadacentral-01.azurewebsites.net/api/usuarios/foro'; // Ajusta la URL si tu backend usa otra
 
   constructor(private http: HttpClient) {}
 

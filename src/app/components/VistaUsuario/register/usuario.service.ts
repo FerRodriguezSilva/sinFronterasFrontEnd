@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UsuarioService {
-  private apiUrl = 'http://localhost:8080/api/usuarios'; // Cambia la URL base
+  private apiUrl = 'sinfronteras-c9fcd9g3hah9hnd8.canadacentral-01.azurewebsites.net/api/usuarios'; // Cambia la URL base
 
   constructor() {}
 

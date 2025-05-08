@@ -24,7 +24,7 @@ export class UsuariosComponent implements OnInit {
 
   isLoading: boolean = true;
   error: string | null = null;
-  private apiUrl = 'http://localhost:8080/api/usuarios';
+  private apiUrl = 'sinfronteras-c9fcd9g3hah9hnd8.canadacentral-01.azurewebsites.net/api/usuarios';
 
   ngOnInit(): void {
     this.cargarUsuarios();

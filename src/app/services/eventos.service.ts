@@ -6,7 +6,7 @@ import { NEventos } from '../components/VistaAdmin/eventos/eventos.model';
   providedIn: 'root'
 })
 export class EventosService {
-  private apiUrl = 'http://localhost:8080/api/eventos'; // Ajusta el puerto según tu backend
+  private apiUrl = 'sinfronteras-c9fcd9g3hah9hnd8.canadacentral-01.azurewebsites.net/api/eventos'; // Ajusta el puerto según tu backend
 
   constructor() { }
 
